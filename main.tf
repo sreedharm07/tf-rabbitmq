@@ -34,6 +34,6 @@ resource "aws_instance" "rabbitmq" {
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.main.id]
   subnet_id              = var.subnet_id[0]
-  tags                   = merge(local.tags, { Name = "${local.name_pre}-mysqlsg" })
+  tags                   = merge(local.tags, { Name = "${local.name_pre}" })
   user_data              = file("${path.module}/userdata.sh")
 }
