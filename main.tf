@@ -1,6 +1,6 @@
 resource "aws_security_group" "main" {
-  name        =  "${local.name_pre}-mysqlsg"
-  description = "${local.name_pre}-mysql-sg"
+  name        =  "${local.name_pre}-rabbitmq"
+  description = "${local.name_pre}-rabbitmq"
   vpc_id      = var.vpc_id
   tags = merge(local.tags,{Name= "${local.name_pre}-rabitmq-sg"})
 
