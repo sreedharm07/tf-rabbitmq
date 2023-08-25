@@ -9,7 +9,7 @@ resource "aws_security_group" "main" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = var.sg-ssh-ingress-cidr
+    cidr_blocks      = [var.sg-ssh-ingress-cidr]
   }
   ingress {
     description      = "RABBITMQ"
