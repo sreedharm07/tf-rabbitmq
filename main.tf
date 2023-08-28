@@ -37,3 +37,11 @@ resource "aws_instance" "rabbitmq" {
   tags                   = merge(local.tags, { Name = "${local.name_pre}" })
   user_data              = file("${path.module}/userdata.sh")
 }
+
+resource "aws_route53_record" "main" {
+  zone_id = "Z09444252M01QG3Q8GZAK"
+  name    =  "rabbitmq-${var.env}"
+  type    = "CNAME"
+  ttl     = 30
+  records = [aws_instance.rabbitmq.private_ip]
+}
