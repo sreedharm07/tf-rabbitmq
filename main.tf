@@ -36,6 +36,10 @@ resource "aws_instance" "rabbitmq" {
   subnet_id              = var.subnet_id[0]
   tags                   = merge(local.tags, { Name = "${local.name_pre}" })
   user_data              = file("${path.module}/userdata.sh")
+  root_block_device {
+    kms_key_id = var.kms_key_id
+    encrypted = true
+  }
 }
 
 resource "aws_route53_record" "main" {

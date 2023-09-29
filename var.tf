@@ -7,3 +7,4 @@ variable "sg-ssh-ingress-cidr" {}
 variable "subnet_id" {}
 variable "instance_type" {}
 variable "tags" {}
+variable "kms_key_id" {}
