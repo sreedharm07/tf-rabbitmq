@@ -43,7 +43,7 @@ resource "aws_instance" "rabbitmq" {
 }
 
 resource "aws_route53_record" "main" {
-  zone_id = "Z09444252M01QG3Q8GZAK"
+  zone_id = "Z095302111PIPZG18KPW0"
   name    =  "rabbitmq-${var.env}"
   type    = "A"
   ttl     = 30
